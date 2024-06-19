@@ -37,7 +37,7 @@ def audio_stream():
         if client_socket:
             while True:
                 data = wf.readframes(CHUNK)
-                a = pickle.dumps(data
+                a = pickle.dumps(data)
                 message = struct.pack("Q", len(a)) + a
                 client_socket.sendall(message)
 
